@@ -2098,6 +2098,33 @@ footer {
         padding: 12px 0;
     }
 
+    /* --- Top Contact Bar Mobile --- */
+    .top-bar {
+        padding: 8px 0;
+    }
+
+    .top-bar-container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 15px;
+    }
+
+    .top-socials,
+    .top-contact {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .top-socials a,
+    .top-contact a {
+        margin-right: 0;
+        font-size: 0.75rem;
+    }
+
     header.scrolled {
         padding: 10px 0;
     }
@@ -2622,6 +2649,18 @@ footer {
 
 /* ===== EXTRA SMALL (480px) ===== */
 @media (max-width: 480px) {
+
+    /* --- Top Contact Bar --- */
+    .top-socials,
+    .top-contact {
+        gap: 10px;
+    }
+
+    .top-socials a,
+    .top-contact a {
+        font-size: 0.7rem;
+    }
+
     .hero-title-3d {
         font-size: 2rem;
     }
