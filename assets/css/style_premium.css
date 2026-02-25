@@ -627,7 +627,7 @@ header.scrolled .nav-container {
 }
 
 header.scrolled {
-    padding: 10px 0;
+    padding: 0;
 }
 
 /* --- Scrolled state: pill gets lighter border --- */
@@ -2215,13 +2215,19 @@ footer {
         padding: 0 10px;
     }
 
-    .top-socials,
-    .top-contact {
+    .top-socials {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
         width: 100%;
-        gap: 6px;
+        gap: 8px;
+    }
+
+    .top-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 2px;
     }
 
     .top-socials a {
@@ -2239,7 +2245,7 @@ footer {
     }
 
     header.scrolled {
-        padding: 10px 0;
+        padding: 0;
     }
 
     .logo {
@@ -2732,9 +2738,12 @@ footer {
 @media (max-width: 480px) {
 
     /* --- Top Contact Bar --- */
-    .top-socials,
-    .top-contact {
+    .top-socials {
         gap: 10px;
+    }
+
+    .top-contact {
+        gap: 2px;
     }
 
     .top-socials a,
