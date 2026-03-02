@@ -132,8 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(hidePreloader, 300);
     });
 
-    // Method 2: Hard timeout — 4 seconds max, no matter what
-    setTimeout(hidePreloader, 4000);
+    // Method 2: Hard timeout — 2 seconds max, no matter what
+    setTimeout(hidePreloader, 2000);
 
     // ============================================
     // GOLDEN DUST PARTICLES — Floating Magic ✨
@@ -302,6 +302,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ============================================
+    // QUICK ENQUIRY SIMPLE HANDLER
+    // ============================================
+    const quickForm = document.querySelector('.quick-enquiry-form');
+    if (quickForm) {
+        quickForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you! Your enquiry has been submitted. Our team will contact you shortly.');
+            quickForm.reset();
+        });
+    }
+
+    // ============================================
     // 8. SWIPER CAROUSEL
     // ============================================
     var swiper = new Swiper('.swiper-container', {
@@ -366,13 +378,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const scrambleElements = document.querySelectorAll('[data-scramble]');
+    // Keep headings static for better readability and trust
     scrambleElements.forEach(el => {
-        const scrambler = new TextScramble(el);
-        ScrollTrigger.create({
-            trigger: el,
-            start: 'top 85%',
-            onEnter: () => scrambler.run()
-        });
+        el.textContent = el.textContent;
     });
 
     // ============================================
@@ -706,7 +714,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     // 14. GOLD PARTICLE ENGINE (Enhanced)
     // ============================================
-    if (window.innerWidth > 768) {
+    if (false && window.innerWidth > 768) {
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
         canvas.style.position = 'fixed';
@@ -861,7 +869,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     // 17. THREE.JS 3D FLOATING ORB (Hero)
     // ============================================
-    if (typeof THREE !== 'undefined' && window.innerWidth > 768) {
+    if (false && typeof THREE !== 'undefined' && window.innerWidth > 768) {
         try {
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
