@@ -23,6 +23,10 @@
     --shadow-lg: 0 25px 60px rgba(141, 198, 255, 0.2);
     --shadow-3d: 0 30px 60px -10px rgba(0, 0, 0, 0.3);
     --glow: 0 0 30px rgba(141, 198, 255, 0.4);
+    /* Unified design tokens */
+    --radius-card: 20px;
+    --radius-pill: 999px;
+    --shadow-soft: 0 14px 34px rgba(15, 23, 42, 0.16);
 }
 
 * {
@@ -560,6 +564,30 @@ header {
     gap: 30px;
 }
 
+/* Highlight primary phone number in top bar */
+.top-contact a[href^="tel"] {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.top-contact a[href^="tel"] i {
+    background: var(--accent-blue);
+    color: var(--primary-bg);
+}
+
+/* Desktop: create clear gap between nav pill and phone block */
+@media (min-width: 769px) {
+    .top-contact {
+        margin-left: 40px;
+    }
+
+    .top-contact a[href^="tel"] {
+        background: rgba(141, 198, 255, 0.15);
+        padding: 6px 14px;
+        border-radius: 999px;
+    }
+}
+
 .top-socials a,
 .top-contact a {
     color: rgba(255, 255, 255, 0.6);
@@ -643,6 +671,13 @@ header.scrolled .nav-links {
     align-items: center;
 }
 
+@media (min-width: 769px) {
+    /* Add clear vertical gap between top bar (with phone) and nav pill */
+    .nav-container {
+        margin-top: 18px;
+    }
+}
+
 .logo {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
@@ -724,6 +759,67 @@ header.scrolled .nav-links {
 .nav-icon {
     font-size: 1.4rem;
 
+}
+
+/* ========================================
+   DESKTOP NAV INSIDE TOP BAR (FLAT)
+   ======================================== */
+@media (min-width: 769px) {
+    /* Use the top bar as the main nav background */
+    .top-bar {
+        position: relative;
+        padding: 14px 0;
+    }
+
+    /* Center nav links over the bar */
+    .nav-container {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+        pointer-events: none;
+    }
+
+    .nav-container .nav-links {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        gap: 28px;
+        padding: 0;
+        pointer-events: auto;
+    }
+
+    .nav-container .logo,
+    .nav-container .nav-icon {
+        display: none;
+    }
+
+    .nav-links li a {
+        padding: 0;
+        border-radius: 0;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .nav-links li a:hover {
+        background: transparent;
+        color: #ffffff;
+    }
+
+    .nav-links li a::after {
+        bottom: -4px;
+    }
+}
+
+/* Desktop-only: visually place nav pill inside top bar */
+@media (min-width: 769px) {
+    .top-bar {
+        padding: 12px 0;
+    }
 }
 
 /* ========================================
@@ -845,6 +941,227 @@ header.scrolled .nav-links {
     z-index: 1;
     max-width: 900px;
     padding: 0 20px;
+}
+
+/* Hero badge overlay — small, cinematic-friendly */
+.hero-badge-overlay {
+    position: absolute;
+    top: 18%;
+    left: 7%;
+    max-width: 540px;
+    background: rgba(8, 8, 12, 0.76);
+    border-radius: 20px;
+    padding: 20px 26px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    text-align: left;
+}
+
+.hero-kicker {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.78rem;
+    color: var(--accent-blue);
+    margin-bottom: 6px;
+}
+
+.hero-main-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+
+.hero-subcopy {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 14px;
+}
+
+.hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero-cta-row .btn-primary,
+.hero-cta-row .btn-outline {
+    padding: 10px 22px;
+    font-size: 0.85rem;
+}
+
+/* ========================================
+   TRUST STRIP
+   ======================================== */
+.trust-strip {
+    background: #ffffff;
+    padding: 40px 0;
+}
+
+.trust-strip-inner {
+    display: grid;
+    grid-template-columns: 2fr 1.1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.trust-main h2 {
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+}
+
+.trust-main p {
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.trust-badges span {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: rgba(141, 198, 255, 0.09);
+    color: #1a1a1a;
+}
+
+.trust-contact {
+    background: var(--glass-bg);
+    border-radius: 18px;
+    padding: 22px 24px;
+    border: 1px solid var(--glass-border);
+}
+
+.trust-contact h3 {
+    margin-bottom: 6px;
+    font-size: 1.2rem;
+}
+
+.trust-contact p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+.btn-small {
+    padding: 10px 22px;
+    font-size: 0.85rem;
+}
+
+.trust-phone {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.trust-phone a {
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+/* ========================================
+   JOURNEY PATHS
+   ======================================== */
+.journey-paths {
+    padding: 70px 0 40px;
+    background: var(--primary-bg);
+}
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.journey-card {
+    padding: 26px 26px 22px;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+}
+
+.journey-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.journey-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+.journey-card ul {
+    margin: 0 0 16px;
+    padding-left: 18px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.journey-card ul li {
+    margin-bottom: 6px;
+}
+
+/* ========================================
+   QUICK ENQUIRY
+   ======================================== */
+.quick-enquiry {
+    padding: 80px 0;
+    background: var(--secondary-bg);
+}
+
+.quick-enquiry-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1.1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.quick-enquiry-points {
+    margin-top: 16px;
+    padding-left: 18px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.quick-enquiry-points li {
+    margin-bottom: 6px;
+}
+
+.quick-enquiry-form-wrapper {
+    padding: 26px 26px 20px;
+}
+
+.quick-enquiry-form .form-row {
+    margin-bottom: 12px;
+}
+
+.quick-enquiry-form input,
+.quick-enquiry-form select,
+.quick-enquiry-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.quick-enquiry-form input:focus,
+.quick-enquiry-form select:focus,
+.quick-enquiry-form textarea:focus {
+    border-color: var(--accent-blue);
+}
+
+.quick-enquiry-note {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
 }
 
 .hero-badge {
@@ -1318,11 +1635,12 @@ header.scrolled .nav-links {
    ======================================== */
 .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border: 1px solid var(--glass-border);
-    border-radius: 24px;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.35s ease;
     position: relative;
     overflow: hidden;
 }
@@ -1343,9 +1661,9 @@ header.scrolled .nav-links {
 }
 
 .glass-card:hover {
-    border-color: rgba(141, 198, 255, 0.5);
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 50px rgba(141, 198, 255, 0.15), 0 0 0 1px rgba(141, 198, 255, 0.1);
+    border-color: rgba(141, 198, 255, 0.45);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
 }
 
 /* ========================================
@@ -1447,9 +1765,10 @@ header.scrolled .nav-links {
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    background: var(--glass-bg);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    /* Subtle gold touch for spiritual section */
+    background: #ffffff;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(212, 175, 55, 0.16);
 }
 
 .hajj-img {
@@ -1497,14 +1816,18 @@ header.scrolled .nav-links {
 }
 
 .hajj-content p {
-    color: var(--accent-blue);
-    font-size: 1rem;
-    margin-bottom: 25px;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
     font-weight: 500;
 }
 
 .hajj-content p i {
     margin-right: 8px;
+}
+
+.hajj-price {
+    margin-bottom: 14px;
 }
 
 .hajj-features {
@@ -1580,8 +1903,16 @@ header.scrolled .nav-links {
     gap: 30px;
 }
 
+.testimonial-featured {
+    margin-bottom: 40px;
+}
+
 .testimonial-card {
     padding: 40px;
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-md);
 }
 
 .testimonial-text {
@@ -2389,6 +2720,11 @@ footer {
     }
 
     .hero-content {
+        display: block;
+    }
+
+    /* Hide desktop hero badge card on mobile */
+    .hero-badge-overlay {
         display: none;
     }
 
@@ -2629,6 +2965,62 @@ footer {
         font-size: 1.15rem;
     }
 
+    /* ===== TRUST STRIP (MOBILE) ===== */
+    .trust-strip {
+        padding: 36px 0 30px;
+    }
+
+    .trust-strip-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .trust-main h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .trust-main p {
+        text-align: center;
+        font-size: 0.95rem;
+    }
+
+    .trust-badges {
+        justify-content: center;
+    }
+
+    .trust-contact {
+        padding: 18px 18px 16px;
+    }
+
+    /* ===== JOURNEY PATHS (MOBILE) ===== */
+    .journey-paths {
+        padding: 50px 0 30px;
+    }
+
+    .journey-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .journey-card {
+        padding: 22px 20px 18px;
+    }
+
+    /* ===== QUICK ENQUIRY (MOBILE) ===== */
+    .quick-enquiry {
+        padding: 60px 0;
+    }
+
+    .quick-enquiry-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .quick-enquiry-form-wrapper {
+        padding: 22px 18px 18px;
+    }
+
     /* ===== CTA ===== */
     .cta-section {
         padding: 80px 0;
@@ -2837,5 +3229,103 @@ footer {
     .hajj-card.swiper-slide {
         width: 320px;
         height: 520px;
+    }
+}
+
+/* ========================================
+   DESKTOP POLISH (NO OVERFLOW)
+   ======================================== */
+@media (min-width: 769px) {
+
+    /* Primary buttons stand out as main actions */
+    .btn-primary {
+        font-size: 1rem;
+        padding: 16px 44px;
+        box-shadow: 0 14px 30px rgba(141, 198, 255, 0.45);
+    }
+
+    /* Secondary buttons calmer */
+    .btn-outline {
+        border-color: rgba(255, 255, 255, 0.4);
+        color: #f5f5f5;
+        box-shadow: none;
+    }
+
+    /* Calm glass cards a bit */
+    .glass-card {
+        animation: none !important;
+    }
+
+    /* Keep 3D cards crisp without looking too busy */
+    .card-3d,
+    .card-tilt-active {
+        transform-style: preserve-3d;
+        will-change: transform;
+    }
+
+    /* Slightly softer marquee background */
+    .marquee-section {
+        background: #dde9f8;
+    }
+
+    /* Clean, flat desktop header + nav inside top bar */
+    .top-bar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    .main-nav {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-links {
+        position: static;
+        display: flex;
+        gap: 28px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    header.scrolled .nav-links {
+        background: transparent;
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    .nav-links li a {
+        padding: 0;
+        border-radius: 0;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .nav-links li a:hover {
+        background: transparent;
+        color: #ffffff;
+    }
+
+    .nav-links li a::after {
+        bottom: -4px;
+    }
+
+    .top-contact {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-left: 0;
+    }
+
+    .hamburger {
+        display: none;
     }
 }
