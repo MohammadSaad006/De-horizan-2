@@ -222,7 +222,7 @@
     <!-- ========================= -->
     <!-- PRIMARY JOURNEY PATHS -->
     <!-- ========================= -->
-    <section class="journey-paths">
+    <!-- <section class="journey-paths">
         <div class="container">
             <div class="section-title">
                 <h2>What would you like to plan?</h2>
@@ -262,7 +262,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- ========================= -->
     <!-- DESTINATIONS — 3D CARDS -->
@@ -835,18 +835,47 @@
         <!-- ========================= -->
 
         <div class="container">
-            <div class="quick-enquiry-grid">
-                <div class="quick-enquiry-copy">
-                    <h2 data-scramble>Tell us about your trip</h2>
-                    <p>Share a few basic details and our team will call or WhatsApp you back with options.</p>
-                    <ul class="quick-enquiry-points">
-                        <li>Personalised itineraries for your dates &amp; budget</li>
-                        <li>Guidance for visas, documentation &amp; safety</li>
-                        <li>Support in English, Hindi &amp; Urdu</li>
-                    </ul>
+            <div class="quick-enquiry-grid" style="align-items: stretch;">
+
+                <!-- LEFT SIDE (Contact Info & Map) -->
+                <div class="contact-left-modern" style="display: flex; flex-direction: column;">
+                    <h2 data-scramble style="color: #ffffff; font-size: 2rem; margin-bottom: 15px;">Visit Our Office
+                    </h2>
+
+                    <p style="color: rgba(255,255,255,0.85); font-size: 1rem; line-height: 1.6; margin-bottom: 15px;">
+                        <strong>De Horizon Holidays</strong><br>
+                        Dheeraj Heritage,<br>
+                        9 Swami Vivekanand Rd, BEST Colony,<br>
+                        Santacruz (West), Mumbai – 400054
+                    </p>
+
+                    <p style="color: rgba(255,255,255,0.85); font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">
+                        <i class="fas fa-phone-alt" style="color: #8dc6ff; width: 20px;"></i> +91 9820009074<br>
+                        <i class="fas fa-envelope" style="color: #8dc6ff; width: 20px;"></i> info@dehorizonholidays.com
+                    </p>
+
+                    <a href="https://www.google.com/maps/search/Dheeraj+Heritage,+9,+Swami+Vivekanand+Rd,+BEST+Colony,+Santacruz+(West),+Mumbai,+Maharashtra+400054"
+                        target="_blank" class="btn-primary"
+                        style="display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin-bottom: 25px;">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+
+                    <div class="map-embed-wrapper" style="border-radius: 12px; overflow: hidden; flex-grow: 1;">
+                        <iframe
+                            src="https://maps.google.com/maps?q=Dheeraj+Heritage,+9,+Swami+Vivekanand+Rd,+BEST+Colony,+Santacruz+West,+Mumbai,+Maharashtra+400054&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                            width="100%" height="100%" style="border:0; min-height: 250px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="DeHorizon Holidays Office Location">
+                        </iframe>
+                    </div>
                 </div>
-                <div class="quick-enquiry-form-wrapper">
-                    <form class="quick-enquiry-form">
+
+                <!-- RIGHT SIDE (Enquiry Form) -->
+                <div class="quick-enquiry-form-wrapper" style="display: flex; flex-direction: column;">
+                    <h2
+                        style="color: var(--primary-color); font-size: 1.8rem; margin-bottom: 20px; font-family: 'Playfair Display', serif;">
+                        Plan Your Trip</h2>
+                    <form class="quick-enquiry-form" style="display: flex; flex-direction: column; flex-grow: 1;">
                         <div class="form-row">
                             <input type="text" name="name" placeholder="Full Name*" required>
                         </div>
@@ -859,45 +888,24 @@
                         <div class="form-row">
                             <select name="tripType" required>
                                 <option value="" disabled selected>Type of trip*</option>
-                                <option>Hajj</option>
-                                <option>Umrah</option>
-                                <option>Family Holiday</option>
-                                <option>Group / Corporate</option>
+                                <option>International Holiday</option>
+                                <option>Domestic Holiday</option>
+                                <option>Hajj & Umrah</option>
+                                <option>Visa Assistance</option>
                                 <option>Other</option>
                             </select>
                         </div>
-                        <div class="form-row">
-                            <textarea name="message" rows="3"
+                        <div class="form-row" style="flex-grow: 1; display: flex;">
+                            <textarea name="message" style="flex-grow: 1; min-height: 120px;"
                                 placeholder="Preferred month, destination, number of people..."></textarea>
                         </div>
-                        <button type="submit" class="btn-primary btn-large">Submit Enquiry</button>
-                        <p class="quick-enquiry-note">We usually respond within a few working hours.</p>
+                        <button type="submit" class="btn-primary btn-large" style="width: 100%; margin-top: 15px;">Send
+                            Enquiry</button>
+                        <p class="quick-enquiry-note" style="text-align: center;">We usually respond within a few
+                            working hours.</p>
                     </form>
                 </div>
-            </div>
-        </div>
 
-        <!-- Google Map -->
-        <div class="container" style="margin-top: 36px;">
-            <div class="map-card">
-                <div class="map-card-header">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h3>Our Office Location</h3>
-                        <p>Dheeraj Heritage, 9, Swami Vivekanand Rd, BEST Colony, Santacruz (West), Mumbai – 400054</p>
-                    </div>
-                    <a href="https://www.google.com/maps/search/Dheeraj+Heritage,+9,+Swami+Vivekanand+Rd,+BEST+Colony,+Santacruz+(West),+Mumbai,+Maharashtra+400054"
-                        target="_blank" class="btn-primary" style="white-space:nowrap; flex-shrink:0;">
-                        <i class="fas fa-directions"></i> Get Directions
-                    </a>
-                </div>
-                <div class="map-embed-wrapper">
-                    <iframe
-                        src="https://maps.google.com/maps?q=Dheeraj+Heritage,+9,+Swami+Vivekanand+Rd,+BEST+Colony,+Santacruz+West,+Mumbai,+Maharashtra+400054&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade" title="DeHorizon Holidays Office Location">
-                    </iframe>
-                </div>
             </div>
         </div>
 
