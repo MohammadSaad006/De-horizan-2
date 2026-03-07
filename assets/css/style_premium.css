@@ -3342,45 +3342,7 @@ footer {
     z-index: 1;
 }
 
-/* ========================================
-   MAP CARD
-   ======================================== */
-.map-card {
-    background: rgba(10, 30, 70, 0.80);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
-}
-
-.map-card-header {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    padding: 22px 28px;
-}
-
-.map-card-header>.fas.fa-map-marker-alt {
-    font-size: 2rem;
-    color: #8dc6ff;
-    flex-shrink: 0;
-}
-
-.map-card-header h3 {
-    color: #ffffff;
-    font-size: 1.1rem;
-    margin: 0 0 4px 0;
-}
-
-.map-card-header p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.85rem;
-    margin: 0;
-    line-height: 1.5;
-}
-
+/* Map embed in the contact section */
 .map-embed-wrapper {
     width: 100%;
     line-height: 0;
@@ -3389,7 +3351,6 @@ footer {
 .map-embed-wrapper iframe {
     display: block;
     width: 100%;
-    height: 350px;
     border: none;
 }
 
